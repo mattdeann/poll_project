@@ -14,6 +14,7 @@ class QuestionAdmin(admin.ModelAdmin):
   # This tells Django: “Choice objects are edited on the Question admin page. By default, provide enough fields for 3 choices.”
   inlines = [ChoiceInline]
   list_display = ('question_text', 'pub_date', 'was_published_recently')
+  list_filter = ['pub_date']
 
 # Model Registration.
 admin.site.register(Question, QuestionAdmin)
